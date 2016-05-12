@@ -1,0 +1,35 @@
+// out: null
+
+.headerFontAttributes(@fontFamily: 'Francois One', sans-serif; @fontColor; @fontSize) {
+    color: @fontColor; // this uses our font color
+    font-family: @fontFamily;
+    font-size: @fontSize; // this uses our font size
+    font-weight: bold; // this uses no parameters... not everything has to be dynamic!
+    margin-top: @fontSize;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: @fontSize * .5;
+    text-transform: uppercase;
+}
+
+.textStyling(@fontFamily: 'Alegreya Sans', sans-serif; @fontColor: @darkColor; @fontSize) {
+    color: @fontColor;
+    font-family: @fontFamily;
+    font-size: @fontSize;
+    line-height: @fontSize * 1.5;
+}
+
+.anchorLinkTrick() { // place this mixin in your elements that you link to if you have a fixed navigation bar on a different z-index than the rest of your page at the top, so that the section you link to isn't "hiding" underneath your navigation when clicked to.
+    content: " ";
+    display: block;
+    height: 70px;
+    margin-top: -70px;
+    visibility: hidden;
+}
+
+.linkColors(@color) {
+    color: @color;
+    text-decoration: none;
+    font-weight: bold;
+}
+
